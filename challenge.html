@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Challenge</title>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <h1>Create An Account</h1>
+    <form>
+      <div>
+        <lable for="first-name">First name</lable>
+        <input id="first-name" required placeholder="First name" type="text" />
+      </div>
+      <div>
+        <lable for="last-name">Last name</lable>
+        <input id="last-name" required placeholder="Last name" type="text" />
+      </div>
+      <div>
+        <lable for="email">Email</lable>
+        <input id="email" required placeholder="Email" type="email" />
+      </div>
+      <div>
+        <lable for="username">Userneme</lable>
+        <input id="username" required placeholder="Username" type="text" />
+      </div>
+      <div>
+        <lable for="password">Password</lable>
+        <input
+          id="password"
+          required
+          placeholder="Password"
+          minlength="10"
+          type="password"
+        />
+      </div>
+      <div>
+        <lable for="birth-date">Birth date</lable>
+        <input id="birth-date" required placeholder="Birth date" type="date" />
+      </div>
+      <div>
+        <lable for="how-happy">How happy are you</lable>
+        <input
+          id="how-happy"
+          required
+          placeholder="How happy are you"
+          type="range"
+          list="tickmarks"
+        />
+        <datalist id="tickmarks">
+          <option value="0"></option>
+          <option value="10"></option>
+          <option value="20"></option>
+          <option value="30"></option>
+          <option value="40"></option>
+          <option value="50"></option>
+          <option value="60"></option>
+          <option value="70"></option>
+          <option value="80"></option>
+          <option value="90"></option>
+          <option value="100"></option>
+        </datalist>
+      </div>
+
+      <div>
+        <lable for="what-color">What is your fav. color?</lable>
+        <input id="what-color" required type="color" />
+      </div>
+      <input type="submit" value="Create Account" />
+    </form>
+  </body>
+</html>
