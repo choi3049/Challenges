@@ -1,0 +1,34 @@
+body {
+  height: 100vh;
+  background-color: tomato;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+div {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.first {
+  background-color: wheat;
+  height: 200px;
+  width: 200px;
+  border: 2px solid black;
+}
+
+.second {
+  background-color: teal;
+  height: 45px;
+  width: 45px;
+  border: 2px solid white;
+}
+
+.third {
+  background-color: teal;
+  height: 45px;
+  width: 160px;
+  border: 2px dashed white;
+}
