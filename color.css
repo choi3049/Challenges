@@ -1,34 +1,49 @@
 body {
-  height: 100vh;
-  background-color: tomato;
+  font-family: times;
+  background-color: rgb(230, 230, 230);
   display: flex;
+  align-items: center;
   justify-content: center;
-  align-items: center;
-}
-div {
-  height: 100vh;
-  display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
 }
-.first {
-  background-color: wheat;
-  height: 200px;
-  width: 200px;
-  border: 2px solid black;
+.top {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  bottom: 10px;
 }
-
-.second {
-  background-color: teal;
-  height: 45px;
-  width: 45px;
-  border: 2px solid white;
+.botton {
+  display: flex;
 }
 
-.third {
+.colorbox {
+  height: 250px;
+  width: 170px;
+  border: 4px solid white;
+  position: relative;
+  margin: 10px;
+}
+
+.textbox {
+  background-color: white;
+  height: 100px;
+}
+
+.text {
+  position: relative;
+  top: 18px;
+  left: 10px;
+}
+
+.top .colorbox:first-child {
+  background-color: tomato;
+}
+.top .colorbox:last-child {
   background-color: teal;
-  height: 45px;
-  width: 160px;
-  border: 2px dashed white;
+}
+.botton .colorbox:first-child {
+  background-color: burlywood;
+}
+.botton .colorbox:last-child {
+  background-color: thistle;
 }
