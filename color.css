@@ -1,127 +1,185 @@
 body {
-  height: 960px;
-  border: 6px solid aquamarine;
-  font-weight: 900;
-  margin: 18px;
+  height: 1000px;
+  margin: 0px;
 }
-.margin {
-  margin: 70px 30px 50px 30px;
-}
-.top-bar {
-  display: flex;
-  align-items: center;
-  margin-bottom: 50px;
-}
-
-.top-bar__playlist {
-  position: relative;
-  left: 80px;
-  font-size: 28px;
-}
-
-.player {
-  display: flex;
-}
-.player__picture {
-  width: 170px;
+.status-bar {
   height: 140px;
-  border-radius: 10%;
-  border: 4px solid black;
-  background-color: rgb(253, 191, 55);
+  margin-top: -20px;
+  background-color: #ffce3e;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: space-between;
 }
-.player-box {
+
+.status-bar__menu {
   position: relative;
-  left: 25px;
+  left: 15px;
 }
-.player-box__title {
-  font-size: 40px;
-  line-height: 1.2;
+
+.status-bar__basket {
+  position: relative;
+  right: 15px;
 }
-.player-box__singer {
-  margin-top: 16px;
+
+.status-bar__nico {
+  font-size: 30px;
+}
+.search {
+  position: relative;
+  bottom: 30px;
+  left: 8px;
+  display: flex;
+  align-items: center;
+  margin: 0px 20px;
+}
+
+.search input {
+  width: 100%;
+  height: 70px;
+  border: none;
   font-size: 20px;
-}
-.boutton {
-  margin: 50px 0;
-  display: flex;
-}
-.boutton__play {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 4px solid black;
-  width: 220px;
-  height: 70px;
-  border-radius: 20px;
-  border-width: 4px 4px 10px 4px;
+  border-radius: 30px;
+  box-shadow: 0 5px rgb(241, 240, 240);
 }
 
-.boutton__play-font {
-  font-size: 25px;
-  margin-left: 15px;
+.search i {
+  position: relative;
+  right: 50px;
+  opacity: 13%;
 }
 
-.boutton__heart {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 4px solid black;
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  margin-left: 20px;
-  border-width: 4px 4px 10px 4px;
-}
-.boutton__plus {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 4px solid black;
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  margin-left: 20px;
-  border-width: 4px 4px 10px 4px;
-}
-.playlist-title {
-  display: flex;
-  align-items: center;
+input::placeholder {
+  position: relative;
+  left: 30px;
+  opacity: 30%;
 }
 
-.playlist__a,
-.playlist__b,
-.playlist__c,
-.playlist__d {
+.book-day {
+  margin: 10px 20px;
+}
+
+.title {
+  margin-bottom: 15px;
+}
+
+.title a {
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.book-day__inf-photo img {
+  width: 130px;
   border-radius: 10px;
-  border: 3px ridge black;
-  width: 60px;
-  height: 60px;
-  margin: 20px 0;
-}
-.playlist__a {
-  background-color: tomato;
-}
-.playlist__b {
-  background-color: pink;
-}
-.playlist__c {
-  background-color: blue;
-}
-.playlist__d {
-  background-color: green;
 }
 
-ul {
-  list-style-type: none;
+.book-day__inf {
+  display: flex;
 }
 
-.playlist__songname {
-  font-size: 21px;
+.book-day__inf-text {
+  margin-left: 20px;
 }
-.playlist__singer {
-  font-size: 15px;
-  color: darkgrey;
+
+.book-day__inf-text__title {
+  font-size: 25px;
+  margin-bottom: 5px;
+}
+
+.book-day__inf-text__author {
+  opacity: 30%;
+  margin-bottom: 8px;
+}
+
+.book-day__inf-text__box {
+  display: flex;
+}
+
+.book-day__inf-text__box div {
+  background-color: whitesmoke;
+  width: 100px;
+  height: 30px;
+  margin-right: 20px;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.book-day__inf-text__buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+.book-day__inf-text__clip {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffce3e;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.book-day__inf-text__booknow {
+  color: whitesmoke;
+  background-color: black;
+  width: 140px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.recommen {
+  display: flex;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+.recommen__photo {
+  width: 50px;
+  height: 80px;
+}
+
+img {
+  width: 100px;
+  border-radius: 10px;
+}
+
+.top-adventures {
+  margin-left: 20px;
+}
+
+.recommen__box {
+  margin-right: 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.popular-authors {
+  margin: 20px;
+}
+
+.authors {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.authors-photo img {
+  width: 150px;
+  height: 180px;
+  margin-right: 30px;
+}
+
+.authors-name {
+  font-size: 20px;
+  font-weight: 700;
+}
+.authors-author {
+  opacity: 30%;
 }
