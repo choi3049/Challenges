@@ -1,21 +1,30 @@
-const body = document.body;
+const h2 = document.querySelector("h2");
+const colors = ["#1abc9c", "#3498db", "#9b59b6", "#f39c12", "#e74c3c"];
 
-const Big = "big";
-const Midle = "midle";
-const Small = "small";
+const superEventHandler = {
+  handleEnter: function () {
+    h2.innerText = "The mouse is here!";
+    h2.style.color = colors[0];
+  },
+  handleLeave: function () {
+    h2.innerText = "The mouse is gone!";
+    h2.style.color = colors[1];
+  },
+  handleResize: function () {
+    h2.innerText = "You just resized!";
+    h2.style.color = colors[2];
+  },
+  handleSelect: function () {
+    h2.innerText = "You're selecting me!";
+    h2.style.color = colors[3];
+  },
+  handleContext: function () {
+    h2.innerHTML = "That was a right click!";
+    h2.style.color = colors[4];
+  },
+};
 
-function handleWindowResize() {
-  const width = window.innerWidth;
-  if (width > 1000) {
-    body.classList.add(Big);
-    body.classList.remove(Midle);
-  } else if (width < 1100 && width > 700) {
-    body.classList.add(Midle);
-    body.classList.remove(Big, Small);
-  } else {
-    body.classList.remove(Midle);
-    body.classList.add(Small);
-  }
-}
-
-window.addEventListener("resize", handleWindowResize);
+h2.addEventListener("mouseenter", superEventHandler.handleEnter);
+h2.addEventListener("mouseleave", superEventHandler.handleLeave);
+window.addEventListener("resize", superEventHandler.handleResize);
+window.addEventListener("contextmenu", superEventHandler.handleContext);
