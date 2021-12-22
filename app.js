@@ -1,17 +1,24 @@
-const body = document.querySelector("body");
-const colors = ["blue", "tomato", "green"];
+const numberForm = document.querySelector("#number-form");
+const playInput = document.querySelector(".play-form input");
+const numForm = document.querySelector(".num-form input");
+const greeting = document.querySelector("#greeting");
+const result = document.querySelector("#result");
 
-function superEventHandler() {
-  var width = window.innerWidth;
-  let color = body.style.backgroundColor;
-  color = colors[2];
-  if (width > 1000) {
-    color = colors[0];
-  } else if (width < 600) {
-    color = colors[1];
-  }
+let myNum;
+let maxNum;
+const HIDDEN_CLASSNAME = "hidden";
 
-  body.style.backgroundColor = color;
+function playBtnClick(event) {
+  event.preventDefault();
+  myNum = playInput.value;
+  maxNum = numForm.value;
+  const ranNum = Math.floor(Math.random() * maxNum);
+  greeting.innerText = `You chose: ${myNum},the machine chose: ${ranNum}`;
+  greeting.classList.remove(HIDDEN_CLASSNAME);
+  result.classList.remove(HIDDEN_CLASSNAME);
+  if (parseInt(myNum) === parseInt(ranNum)) {
+    result.innerText = `You won`;
+  } else result.innerText = `You lost`;
 }
 
-window.addEventListener("resize", superEventHandler);
+numberForm.addEventListener("submit", playBtnClick);
