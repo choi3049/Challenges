@@ -1,24 +1,22 @@
-const numberForm = document.querySelector("#number-form");
-const playInput = document.querySelector(".play-form input");
-const numForm = document.querySelector(".num-form input");
-const greeting = document.querySelector("#greeting");
-const result = document.querySelector("#result");
+const clock = document.querySelector("h2#clock");
 
-let myNum;
-let maxNum;
-const HIDDEN_CLASSNAME = "hidden";
-
-function playBtnClick(event) {
-  event.preventDefault();
-  myNum = playInput.value;
-  maxNum = numForm.value;
-  const ranNum = Math.floor(Math.random() * maxNum);
-  greeting.innerText = `You chose: ${myNum},the machine chose: ${ranNum}`;
-  greeting.classList.remove(HIDDEN_CLASSNAME);
-  result.classList.remove(HIDDEN_CLASSNAME);
-  if (parseInt(myNum) === parseInt(ranNum)) {
-    result.innerText = `You won`;
-  } else result.innerText = `You lost`;
+function getClock() {
+  let date = new Date().getTime();
+  let dday = new Date("December 25,2021,0:00:00").getTime();
+  let gap = dday - date;
+  const days = String(Math.floor(gap / (1000 * 60 * 60 * 24)));
+  const hours = String(
+    Math.floor((gap % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+  ).padStart(2, "0");
+  const minutes = String(
+    Math.floor((gap % (1000 * 60 * 60)) / (1000 * 60))
+  ).padStart(2, "0");
+  const seconds = String(Math.floor((gap % (1000 * 60)) / 1000)).padStart(
+    2,
+    "0"
+  );
+  clock.innerText = `${days}d${hours}h${minutes}m${seconds}s`;
 }
 
-numberForm.addEventListener("submit", playBtnClick);
+getClock();
+setInterval(getClock, 1000);
