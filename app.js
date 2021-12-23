@@ -1,22 +1,30 @@
-const clock = document.querySelector("h2#clock");
+const colors = [
+  "#ef5777",
+  "#575fcf",
+  "#4bcffa",
+  "#34e7e4",
+  "#0be881",
+  "#f53b57",
+  "#3c40c6",
+  "#0fbcf9",
+  "#00d8d6",
+  "#05c46b",
+  "#ffc048",
+  "#ffdd59",
+  "#ff5e57",
+  "#d2dae2",
+  "#485460",
+  "#ffa801",
+  "#ffd32a",
+  "#ff3f34",
+];
 
-function getClock() {
-  let date = new Date().getTime();
-  let dday = new Date("December 25,2021,0:00:00").getTime();
-  let gap = dday - date;
-  const days = String(Math.floor(gap / (1000 * 60 * 60 * 24)));
-  const hours = String(
-    Math.floor((gap % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
-  ).padStart(2, "0");
-  const minutes = String(
-    Math.floor((gap % (1000 * 60 * 60)) / (1000 * 60))
-  ).padStart(2, "0");
-  const seconds = String(Math.floor((gap % (1000 * 60)) / 1000)).padStart(
-    2,
-    "0"
-  );
-  clock.innerText = `${days}d${hours}h${minutes}m${seconds}s`;
+const btn = document.querySelector("button");
+
+function colorGradident() {
+  const one = colors[Math.floor(Math.random() * colors.length)];
+  const two = colors[Math.floor(Math.random() * colors.length)];
+  document.body.style.background = `linear-gradient(to right,${one},${two})`;
 }
 
-getClock();
-setInterval(getClock, 1000);
+btn.addEventListener("click", colorGradident);
